@@ -32,19 +32,15 @@ void setup() {
 }
 
 void loop() {
-
-  for(int speed = 0; speed <= 100; speed++) {
+  // Speed ramp up: 0 → 255
+  for (int speed = 0; speed <= 255; speed++) {
     set_speed(speed);
-    delay(20);
+    delay(10);   // Adjust delay for smoothness
   }
 
-  for(int speed = 101; speed <= 255; speed++) {
+  // Speed ramp down: 255 → 0
+  for (int speed = 255; speed >= 0; speed--) {
     set_speed(speed);
-    delay(5);
-  }
-
-  for(int speed = 255; speed >= 0; speed--) {
-    set_speed(speed);
-    delay(10);
+    delay(10);   // Same delay for symmetry
   }
 }
