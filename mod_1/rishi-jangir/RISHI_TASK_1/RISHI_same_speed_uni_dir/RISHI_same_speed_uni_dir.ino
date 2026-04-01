@@ -7,7 +7,7 @@
 #define IN1 5
 #define IN2 7
 
-int speedValue = 150;
+int speedValue = 150;   // Motor speed (0–255)
 
 void move_forward(int speed) {
   digitalWrite(IN1, HIGH);
@@ -26,10 +26,10 @@ void setup() {
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
 
-  stop_motor();                 // Safety init
-  move_forward(speedValue);     // Start motor
+  stop_motor(); // Safety stop at startup
 }
 
 void loop() {
-  // Continuous forward
+  // Continuous forward motion
+  move_forward(speedValue);
 }
